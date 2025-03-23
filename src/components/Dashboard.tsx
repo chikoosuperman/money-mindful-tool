@@ -39,7 +39,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
   
   // Get top expense categories
   const topExpenseCategories = useMemo(() => {
-    const categoryMap = {};
+    const categoryMap: Record<string, number> = {};
     
     transactions
       .filter(t => t.type === 'expense')
@@ -127,7 +127,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 className="text-blue-600 text-sm font-medium hover:text-blue-800 transition-colors"
                 onClick={() => {
                   // Find the transactions tab button and click it
-                  const button = document.querySelector('button[data-tab="transactions"]');
+                  const button = document.querySelector('button[data-tab="transactions"]') as HTMLButtonElement;
                   if (button) button.click();
                 }}
               >
@@ -185,7 +185,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 className="text-blue-600 text-sm font-medium hover:text-blue-800 transition-colors"
                 onClick={() => {
                   // Find the budgets tab button and click it
-                  const button = document.querySelector('button[data-tab="budgets"]');
+                  const button = document.querySelector('button[data-tab="budgets"]') as HTMLButtonElement;
                   if (button) button.click();
                 }}
               >
@@ -242,7 +242,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 className="text-blue-600 text-sm font-medium hover:text-blue-800 transition-colors"
                 onClick={() => {
                   // Find the savings tab button and click it
-                  const button = document.querySelector('button[data-tab="savings"]');
+                  const button = document.querySelector('button[data-tab="savings"]') as HTMLButtonElement;
                   if (button) button.click();
                 }}
               >
